@@ -21,29 +21,46 @@ class Program
             Console.WriteLine("Grade: F");
     }
 
-
-  
-
-// main menu
-
-    static void Main(string[] args)
+  // Ticket Price Calculator
+    static void TicketPriceCalculator()
     {
-        while (true)
-        {
-            Console.WriteLine("\nSelect an application:");
-            Console.WriteLine("1. Grade Calculator");
-            
-            string choice = Console.ReadLine();
-            switch (choice)
-            {
-                case "1":
-                    GradeCalculator();
-                    break;
-                
-                default:
-                    Console.WriteLine("Invalid choice. Try again.");
-                    break;
-            }
-        }
+        Console.Write("Enter your age: ");
+        int age = int.Parse(Console.ReadLine());
+
+        if (age <= 12 || age >= 65)
+            Console.WriteLine("Ticket price: GHC7");
+        else
+            Console.WriteLine("Ticket price: GHC10");
     }
+
+
+
+  // main menu
+
+  static void Main(string[] args)
+  {
+    while (true)
+    {
+      Console.WriteLine("\nSelect an application:");
+      Console.WriteLine("1. Grade Calculator");
+      Console.WriteLine("2. Ticket Price Calculator");
+      Console.Write("Enter choice (1-2): ");
+
+
+      string choice = Console.ReadLine();
+      switch (choice)
+      {
+        case "1":
+          GradeCalculator();
+          break;
+        case "2":
+          TicketPriceCalculator();
+          break;
+
+        default:
+          Console.WriteLine("Invalid choice. Try again.");
+          break;
+      }
+    }
+  }
 }
